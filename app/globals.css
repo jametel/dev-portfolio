@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-page-bg: #0a0a0a;
+  --color-card-bg: #111111;
+  --color-elevated-surface: #1a1a1a;
+  --color-hover-state: #242424;
+  --color-border: #2e2e2e;
+
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #888888;
+  --color-text-muted: #444444;
+
+  --color-laser-red: #ff0055;
+  --color-laser-cyan: #00ffcc;
+  --color-laser-purple: #cc00ff;
+  --color-laser-amber: #ffaa00;
+  --color-laser-green: #39ff14;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes laserCycle {
+  0%, 100% { background-color: var(--color-laser-red); }
+  20% { background-color: var(--color-laser-cyan); }
+  40% { background-color: var(--color-laser-purple); }
+  60% { background-color: var(--color-laser-amber); }
+  80% { background-color: var(--color-laser-green); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes textLaserCycle {
+  0%, 100% { color: var(--color-laser-red); }
+  20% { color: var(--color-laser-cyan); }
+  40% { color: var(--color-laser-purple); }
+  60% { color: var(--color-laser-amber); }
+  80% { color: var(--color-laser-green); }
+}
+
+@utility hover-animate-text {
+  &:hover {
+    animation: textLaserCycle 8s linear infinite;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
