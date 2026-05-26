@@ -144,10 +144,20 @@ const LaserBackground = () => {
         // PRESS "L" TO START SHOW
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key.toLowerCase() === "l") {
-                modeRef.current = "show";
-                showStartRef.current = performance.now();
+                 modeRef.current = "show";
+                 showStartRef.current = performance.now();
             }
         };
+
+        // const k: Konami = new Konami()
+        // k.enable()
+
+        // // Add the event listener and callback
+        // window.addEventListener(k.eventName, () => {
+
+        //     modeRef.current = "show";
+        //     showStartRef.current = performance.now();
+        // })
 
         window.addEventListener("keydown", onKeyDown);
 

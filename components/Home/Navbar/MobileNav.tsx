@@ -24,7 +24,7 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
             {NavLinks.map((link, index)=>{
                 const linkClass = textNavClasses[index % textNavClasses.length]
                 return <Link key={link.id} href={link.url}>
-                    <p className={`${linkClass} w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-text-primary sm:text-[30px]`}>{link.label}</p>
+                    <p onClick={closeNav} className={`${linkClass} w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-text-primary sm:text-[30px]`}>{link.label}</p>
                 </Link>
             })}
             {/* Cross Icon */ }
