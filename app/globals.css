@@ -42,7 +42,7 @@
 
 @utility hover-animate-laser {
   &:hover {
-    animation: textLaserCycle 8s linear infinite;
+    animation: laserCycle 8s linear infinite;
   }
 }
 
