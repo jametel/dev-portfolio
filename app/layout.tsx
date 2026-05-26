@@ -11,8 +11,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "James Behre Portfolio | Next.js",
-  description: "Portfolio website built with Next.js",
+  title: "James Behre Portfolio",
+  description: "Portfolio website of James Behre",
 };
 
 export const viewport = {
