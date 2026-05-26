@@ -119,8 +119,8 @@ const LaserBackground = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
 
-            glowCanvas.width = window.innerWidth * 0.25;
-            glowCanvas.height = window.innerHeight * 0.25;
+            glowCanvas.width = window.innerWidth * 0.5;
+            glowCanvas.height = window.innerHeight * 0.5;
 
             rigsRef.current = precompute(
                 RIGS,
@@ -192,7 +192,7 @@ const LaserBackground = () => {
                 canvas.height
             );
 
-            const s = 0.25;
+            const s = 0.5;
 
             glowCtx.clearRect(
                 0,
