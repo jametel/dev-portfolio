@@ -3,6 +3,7 @@
 type GameControllerProps = {
     color?: string;
     onClick?: () => void;
+    className?: string;
 }
 
 const pressKey = (key: string) => {
@@ -10,7 +11,7 @@ const pressKey = (key: string) => {
     window.dispatchEvent(new KeyboardEvent('keyup', { key, bubbles: true }));
 };
 
-const GameController = ({ color = '#f0f0f0', onClick }: GameControllerProps) => {
+const GameController = ({ color = '#f0f0f0', onClick, className }: GameControllerProps) => {
     return (
         <svg
             
@@ -21,6 +22,7 @@ const GameController = ({ color = '#f0f0f0', onClick }: GameControllerProps) => 
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             onClick={onClick}
+            className={className}
             style={{ cursor: onClick ? 'pointer' : 'default', filter: `drop-shadow(0 0 8px ${color})` }}
         >
             {/* Body */}
