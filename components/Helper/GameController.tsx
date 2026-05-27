@@ -57,7 +57,8 @@ const GameController = ({ color = '#f0f0f0', onClick, className }: GameControlle
             {/* A button */}
             <circle cx="148" cy="52" r="8" fill={color} 
                 style={{ cursor: 'pointer' }}
-                onClick={() => pressKey('a')}
+                // onClick={() => pressKey('a') }
+                onClick={() => window.dispatchEvent(new Event('lasershow'))}
             />
             <text
                 x="148" y="55"
