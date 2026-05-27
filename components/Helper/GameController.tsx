@@ -34,31 +34,33 @@ const GameController = ({ color = '#f0f0f0', onClick, className }: GameControlle
                 strokeWidth={1.5}
             /> */}
 
-            {/* D-pad vertical */}
-            <rect x="47" y="42" width="10" height="12" rx="2" fill={color} 
+            {/* D-pad up */}
+            <rect x="42" y="27" width="20" height="24" rx="2" fill={color}
                 style={{ cursor: 'pointer' }}
-                onClick={() => pressKey('ArrowUp')}
+                onClick={(e) => { e.stopPropagation(); pressKey('ArrowUp'); }}
             />
-            <rect x="47" y="60" width="10" height="12" rx="2" fill={color} 
+            {/* D-pad down */}
+            <rect x="42" y="63" width="20" height="24" rx="2" fill={color}
                 style={{ cursor: 'pointer' }}
-                onClick={() => pressKey('ArrowDown')}
+                onClick={(e) => { e.stopPropagation(); pressKey('ArrowDown'); }}
             />
-            <rect x="37" y="52" width="12" height="10" rx="2" fill={color} 
+            {/* D-pad left */}
+            <rect x="20" y="47" width="24" height="20" rx="2" fill={color}
                 style={{ cursor: 'pointer' }}
-                onClick={() => pressKey('ArrowLeft')}
+                onClick={(e) => { e.stopPropagation(); pressKey('ArrowLeft'); }}
             />
-            <rect x="55" y="52" width="12" height="10" rx="2" fill={color} 
+            {/* D-pad right */}
+            <rect x="60" y="47" width="24" height="20" rx="2" fill={color}
                 style={{ cursor: 'pointer' }}
-                onClick={() => pressKey('ArrowRight')}
+                onClick={(e) => { e.stopPropagation(); pressKey('ArrowRight'); }}
             />
-            {/* D-pad center (non-clickable) */}
-             <rect x="47" y="52" width="10" height="10" rx="1" fill={color}  />
-
+            {/* D-pad center */}
+            <rect x="42" y="51" width="20" height="20" rx="1" fill={color} />
             {/* A button */}
             <circle cx="148" cy="52" r="8" fill={color} 
                 style={{ cursor: 'pointer' }}
-                // onClick={() => pressKey('a') }
-                onClick={() => window.dispatchEvent(new Event('lasershow'))}
+                onClick={() => pressKey('a') }
+                // onClick={() => window.dispatchEvent(new Event('lasershow'))}
             />
             <text
                 x="148" y="55"
