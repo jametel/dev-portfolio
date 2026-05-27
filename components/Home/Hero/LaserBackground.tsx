@@ -142,12 +142,22 @@ const LaserBackground = () => {
         });
 
         // PRESS "L" TO START SHOW
-        const onKeyDown = (e: KeyboardEvent) => {
-            if (e.key.toLowerCase() === "l") {
-                 modeRef.current = "show";
-                 showStartRef.current = performance.now();
-            }
-        };
+        // const onKeyDown = (e: KeyboardEvent) => {
+        //     if (e.key.toLowerCase() === "l") {
+        //          modeRef.current = "show";
+        //          showStartRef.current = performance.now();
+        //     }
+        // };
+
+        const onLaserShow = () => {
+        modeRef.current = "show";
+        showStartRef.current = performance.now();
+        document.getElementById('Hero')?.scrollIntoView({ behavior: 'smooth' });
+};
+        window.addEventListener("lasershow", onLaserShow);
+
+// add to cleanup:
+        
 
         // const k: Konami = new Konami()
         // k.enable()
@@ -159,7 +169,7 @@ const LaserBackground = () => {
         //     showStartRef.current = performance.now();
         // })
 
-        window.addEventListener("keydown", onKeyDown);
+        // window.addEventListener("keydown", onKeyDown);
 
         const length = 3000;
 
@@ -387,14 +397,11 @@ const LaserBackground = () => {
                 onScroll
             );
 
-            window.removeEventListener(
-                "keydown",
-                onKeyDown
-            );
-
             cancelAnimationFrame(
                 animFrameRef.current
             );
+
+            window.removeEventListener("lasershow", onLaserShow);
         };
     }, []);
 

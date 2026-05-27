@@ -136,7 +136,8 @@ const hobbiesSkills = [
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
         tier: 'Rare',
-        icon: <span role='img' aria-label='Flowstar' style={{ fontSize: '30px', cursor: 'pointer' }}>𑁍</span>
+        icon: <span role='img' aria-label='Flowstar' style={{ fontSize: '30px', cursor: 'pointer' }}>𑁍</span>,
+        iconClasses: 'hover:animate-spin'
     },
     {
         name: 'Skateboarding',

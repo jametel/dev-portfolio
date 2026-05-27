@@ -1,7 +1,11 @@
-import React from 'react'
+"use client";
+
+import React, { useState } from 'react'
 import Image from 'next/image'
+import GameController from '@/components/Helper/GameController';
 
 const Projects = () => {
+  const [imageVisible, setImageVisible] = useState(true);
   return (
     <div className='pt-16 pb-16'>
         <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-text-primary'>
@@ -24,9 +28,16 @@ const Projects = () => {
           </a>
           <a>
             <div className='border-2 rounded-lg border-laser-amber/50 bg-card-bg shadow-lg shadow-laser-amber/20 hover:bg-hover-state'>
-              <div className='relative w-full h-100'>
-                <Image src='/images/projects/website-project.png' alt='Portfolio Image' fill className='rounded object-cover'/>
-              </div>
+              {imageVisible ? (
+                <div className='relative w-full h-100'>
+                  <Image src='/images/projects/website-project.png' alt='Portfolio Image' fill className='rounded object-cover' onClick={() => setImageVisible(false)} />
+                    
+                </div>
+              ) : (
+                <div className='relative w-full h-100 items-center justify-center bg-elevated-surface rounded'>
+                  <GameController color='#f0f0f0'/>
+                </div>
+              )}
               <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-text-primary px-4'>Portfolio Site</h1>
               <h1 className='pt-2 font-medium text-text-secondary px-4 pb-4'>Have you heard of the Konami code?</h1>
               <div className='flex flex-wrap gap-2 px-4 pb-4'>
