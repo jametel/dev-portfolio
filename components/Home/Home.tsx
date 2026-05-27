@@ -8,8 +8,8 @@ const HomePage = () => {
   return (
     <div className='overflow-hidden'>
       <div id='Hero'><Hero /></div>
-      <div id='Projects'><Projects /></div>
-      <div id='Skills'><Skills /></div>
+      <div id='Projects' className='scroll-mt-10'><Projects /></div>
+      <div id='Skills' className='scroll-mt-10'><Skills /></div>
     </div>
   )
 }

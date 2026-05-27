@@ -31,8 +31,9 @@ const Nav = ({openNav}:Props) => {
     
 
   return (
-        <div className={`transition-all ${navBg ? 'bg-elevated-surface/50 shadow-md':'fixed'
-        } duration-300 h-[8vh] z-[10000] fixed w-full`}>
+        <div className={`transition-all ${navBg ? 
+        'bg-elevated-surface/70 backdrop-blur-sm [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)] shadow-md':'fixed'
+        } duration-300 h-[9vh] z-[10000] fixed w-full`}>
         <div className="flex items-center h-full justify-between w-[90%] mx-auto">
             {/* Logo */ }
             <div className='flex items-center space-x-2'>

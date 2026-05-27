@@ -1,5 +1,12 @@
 "use client";
 import React from 'react'
+import { FaBook, FaGit, FaJava, FaLinux, FaPython, FaRust } from 'react-icons/fa';
+import { GiSkateboard, GiWhistle } from 'react-icons/gi';
+import { MdLocalMovies } from 'react-icons/md';
+import { RiNextjsFill } from 'react-icons/ri';
+import { SiCplusplus, SiMysql, SiPostgresql, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { TbBarbellFilled, TbBrandMinecraft } from 'react-icons/tb';
+import { VscTerminalPowershell } from 'react-icons/vsc';
 
 import Tilt from 'react-parallax-tilt';
 
@@ -9,42 +16,48 @@ const languageSkills = [
         level: 4,
         color: 'laser-purple',
         textColor: 'text-laser-purple',
-        tier: 'Epic'
+        tier: 'Epic',
+        icon: <FaJava />
     },
     {
         name: 'Python',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <FaPython />
     },
     {
         name: 'C++',
         level: 2,
         color: 'laser-green',
         textColor: 'text-laser-green',
-        tier: 'Uncommon'
+        tier: 'Uncommon',
+        icon: <SiCplusplus />
     },
     {
         name: 'TypeScript',
         level: 2,
         color: 'laser-green',
         textColor: 'text-laser-green',
-        tier: 'Uncommon'
+        tier: 'Uncommon',
+        icon: <SiTypescript />
     },
     {
         name: 'SQL',
         level: 2,
         color: 'laser-green',
         textColor: 'text-laser-green',
-        tier: 'Uncommon'
+        tier: 'Uncommon',
+        icon: <SiMysql />
     },
     {
         name: 'Rust',
         level: 1,
         color: 'text-secondary',
         textColor: 'text-text-secondary',
-        tier: 'Common'
+        tier: 'Common',
+        icon: <FaRust />
     },
 ];
 
@@ -54,42 +67,48 @@ const toolsSkills = [
         level: 4,
         color: 'laser-purple',
         textColor: 'text-laser-purple',
-        tier: 'Epic'
+        tier: 'Epic',
+        icon: <FaGit />
     },
     {
         name: 'Linux/Unix',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <FaLinux />
     },
     {
         name: 'PowerShell',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <VscTerminalPowershell />
     },
     {
         name: 'Next.js',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <RiNextjsFill />
     },
     {
         name: 'Tailwind CSS',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <SiTailwindcss />
     },
     {
         name: 'PostgreSQL',
         level: 2,
         color: 'laser-green',
         textColor: 'text-laser-green',
-        tier: 'Uncommon'
+        tier: 'Uncommon',
+        icon: <SiPostgresql />
     },
 ];
 
@@ -99,49 +118,56 @@ const hobbiesSkills = [
         level: 5,
         color: 'laser-amber',
         textColor: 'text-laser-amber',
-        tier: 'Legendary'
+        tier: 'Legendary',
+        icon: <TbBrandMinecraft />
     },
     {
         name: 'Whistling',
         level: 4,
         color: 'laser-purple',
         textColor: 'text-laser-purple',
-        tier: 'Epic'
+        tier: 'Epic',
+        icon: <GiWhistle />
     },
     {
         name: 'Flowstar',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <span role='img' aria-label='Flowstar' style={{ fontSize: '30px', cursor: 'pointer' }}>𑁍</span>
     },
     {
         name: 'Skateboarding',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <GiSkateboard />
     },
     {
         name: 'Weight Lifting',
         level: 3,
         color: 'laser-cyan',
         textColor: 'text-laser-cyan',
-        tier: 'Rare'
+        tier: 'Rare',
+        icon: <TbBarbellFilled />
     },
     {
         name: 'Movie Watching',
         level: 2,
         color: 'laser-green',
         textColor: 'text-laser-green',
-        tier: 'Uncommon'
+        tier: 'Uncommon',
+        icon: <MdLocalMovies />
     },
     {
         name: 'Reading',
         level: 1,
         color: 'text-secondary',
         textColor: 'text-text-secondary',
-        tier: 'Common'
+        tier: 'Common',
+        icon: <FaBook />
     },
 ];
 
@@ -172,10 +198,11 @@ const Skills = () => {
             {languageSkills.map((skill) => {
                 return (
                     <Tilt key={skill.name} scale={1.5} transitionSpeed={400} className='hover:z-100'>
-                        <div className={`bg-card-bg/80 text-center w-60 h-40 rounded-3xl flex flex-col items-center 
+                        <div className={`bg-card-bg/80 text-center w-60 h-50 rounded-3xl flex flex-col items-center 
                         justify-center shadow-lg transition hover:scale-105 border border-${skill.color}/50 shadow-${skill.color}/20
-                        hover:bg-hover-state`}>
+                        hover:bg-hover-state/50 hover:backdrop-blur-sm`}>
                             <p className='text-2xl font-semibold text-text-primary pb-4'>{skill.name}</p>
+                            <div className='text-3xl mb-4 text-text-primary'>{skill.icon}</div>
                             <div className='text-5xl mb-4 text-text-secondary'><StarRating level={skill.level} textColor={skill.textColor}/></div>
                             <p className={`text-sm font-bold ${skill.textColor}`}>{skill.tier}</p>
                         </div>
@@ -188,10 +215,11 @@ const Skills = () => {
             {toolsSkills.map((skill) => {
                 return (
                     <Tilt key={skill.name} scale={1.5} transitionSpeed={400} className='hover:z-100'>
-                        <div className={`bg-card-bg/80 text-center w-60 h-40 rounded-3xl flex flex-col items-center 
+                        <div className={`bg-card-bg/80 text-center w-60 h-50 rounded-3xl flex flex-col items-center 
                         justify-center shadow-lg transition hover:scale-105 border border-${skill.color}/50 shadow-${skill.color}/20
-                        hover:bg-hover-state`}>
+                        hover:bg-hover-state/50 hover:backdrop-blur-sm`}>
                             <p className='text-2xl font-semibold text-text-primary pb-4'>{skill.name}</p>
+                            <div className='text-3xl mb-4 text-text-primary'>{skill.icon}</div>
                             <div className='text-5xl mb-4 text-text-secondary'><StarRating level={skill.level} textColor={skill.textColor}/></div>
                             <p className={`text-sm font-bold ${skill.textColor}`}>{skill.tier}</p>
                         </div>
@@ -204,10 +232,11 @@ const Skills = () => {
             {hobbiesSkills.map((skill) => {
                 return (
                     <Tilt key={skill.name} scale={1.5} transitionSpeed={400} className='hover:z-100'>
-                        <div className={`bg-card-bg/80 text-center w-60 h-40 rounded-3xl flex flex-col items-center 
+                        <div className={`bg-card-bg/80 text-center w-60 h-50 rounded-3xl flex flex-col items-center 
                         justify-center shadow-lg transition hover:scale-105 border border-${skill.color}/50 shadow-${skill.color}/20
-                        hover:bg-hover-state`}>
+                        hover:bg-hover-state/50 hover:backdrop-blur-sm`}>
                             <p className='text-2xl font-semibold text-text-primary pb-4'>{skill.name}</p>
+                            <div className='text-3xl mb-4 text-text-primary'>{skill.icon}</div>
                             <div className='text-5xl mb-4 text-text-secondary'><StarRating level={skill.level} textColor={skill.textColor}/></div>
                             <p className={`text-sm font-bold ${skill.textColor}`}>{skill.tier}</p>
                         </div>
