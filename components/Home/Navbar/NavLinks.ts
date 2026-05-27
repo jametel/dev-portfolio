@@ -16,12 +16,12 @@ export const NavLinks = [
     },
     {
         id: 4,
-        url: '#',
+        url: '#Experience',
         label: 'Experience'
     },
     {
         id: 5,
-        url: '#',
+        url: '#Contact',
         label: 'Contact'
     }
 ]

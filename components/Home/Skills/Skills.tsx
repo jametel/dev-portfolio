@@ -9,6 +9,7 @@ import { TbBarbellFilled, TbBrandMinecraft } from 'react-icons/tb';
 import { VscTerminalPowershell } from 'react-icons/vsc';
 
 import Tilt from 'react-parallax-tilt';
+import SkillsCard from './SkillsCard';
 
 const languageSkills = [
     {
@@ -171,21 +172,6 @@ const hobbiesSkills = [
     },
 ];
 
-const StarRating = ({ level, textColor }: { level: number, textColor: string }) => {
-    return (
-        <div className='flex gap-1'>
-            {Array.from({ length: 5 }, (_, i) => (
-                <span
-                    key={i}
-                    className={`${textColor} text-sm`}
-                    style={{ opacity: i < level ? 1 : 0.2 }}
-                >
-                    ★
-                </span>
-            ))}
-        </div>
-    );
-};
 
 const Skills = () => {
   return (
@@ -197,16 +183,7 @@ const Skills = () => {
         <div className='flex flex-wrap justify-center gap-6 mt-6'>
             {languageSkills.map((skill) => {
                 return (
-                    <Tilt key={skill.name} scale={1.5} transitionSpeed={400} className='hover:z-100'>
-                        <div className={`bg-card-bg/80 text-center w-60 h-50 rounded-3xl flex flex-col items-center 
-                        justify-center shadow-lg transition hover:scale-105 border border-${skill.color}/50 shadow-${skill.color}/20
-                        hover:bg-hover-state/50 hover:backdrop-blur-sm`}>
-                            <p className='text-2xl font-semibold text-text-primary pb-4'>{skill.name}</p>
-                            <div className='text-3xl mb-4 text-text-primary'>{skill.icon}</div>
-                            <div className='text-5xl mb-4 text-text-secondary'><StarRating level={skill.level} textColor={skill.textColor}/></div>
-                            <p className={`text-sm font-bold ${skill.textColor}`}>{skill.tier}</p>
-                        </div>
-                    </Tilt>
+                    <SkillsCard key={skill.name} {...skill} />
                 )
             })}
         </div>
@@ -214,16 +191,7 @@ const Skills = () => {
         <div className='flex flex-wrap justify-center gap-6 mt-6'>
             {toolsSkills.map((skill) => {
                 return (
-                    <Tilt key={skill.name} scale={1.5} transitionSpeed={400} className='hover:z-100'>
-                        <div className={`bg-card-bg/80 text-center w-60 h-50 rounded-3xl flex flex-col items-center 
-                        justify-center shadow-lg transition hover:scale-105 border border-${skill.color}/50 shadow-${skill.color}/20
-                        hover:bg-hover-state/50 hover:backdrop-blur-sm`}>
-                            <p className='text-2xl font-semibold text-text-primary pb-4'>{skill.name}</p>
-                            <div className='text-3xl mb-4 text-text-primary'>{skill.icon}</div>
-                            <div className='text-5xl mb-4 text-text-secondary'><StarRating level={skill.level} textColor={skill.textColor}/></div>
-                            <p className={`text-sm font-bold ${skill.textColor}`}>{skill.tier}</p>
-                        </div>
-                    </Tilt>
+                    <SkillsCard key={skill.name} {...skill} />
                 )
             })}
         </div>
@@ -231,16 +199,7 @@ const Skills = () => {
         <div className='flex flex-wrap justify-center gap-6 mt-6'>
             {hobbiesSkills.map((skill) => {
                 return (
-                    <Tilt key={skill.name} scale={1.5} transitionSpeed={400} className='hover:z-100'>
-                        <div className={`bg-card-bg/80 text-center w-60 h-50 rounded-3xl flex flex-col items-center 
-                        justify-center shadow-lg transition hover:scale-105 border border-${skill.color}/50 shadow-${skill.color}/20
-                        hover:bg-hover-state/50 hover:backdrop-blur-sm`}>
-                            <p className='text-2xl font-semibold text-text-primary pb-4'>{skill.name}</p>
-                            <div className='text-3xl mb-4 text-text-primary'>{skill.icon}</div>
-                            <div className='text-5xl mb-4 text-text-secondary'><StarRating level={skill.level} textColor={skill.textColor}/></div>
-                            <p className={`text-sm font-bold ${skill.textColor}`}>{skill.tier}</p>
-                        </div>
-                    </Tilt>
+                    <SkillsCard key={skill.name} {...skill} />
                 )
             })}
         </div>
