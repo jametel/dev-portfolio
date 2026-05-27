@@ -7,13 +7,13 @@ import { Typewriter } from 'react-simple-typewriter'
 import LaserBackground from './LaserBackground';
 
 const laserColors = ['#00ffcc', '#cc00ff', '#ff0055', '#ffaa00', '#39ff14'];
-const hoverLasers = [
-    'hover:text-laser-red',
-    'hover:text-laser-cyan',
-    'hover:text-laser-purple',
-    'hover:text-laser-amber',
-    'hover:text-laser-green'
-]
+// const hoverLasers = [
+//     'hover:text-laser-red',
+//     'hover:text-laser-cyan',
+//     'hover:text-laser-purple',
+//     'hover:text-laser-amber',
+//     'hover:text-laser-green'
+// ]
 
 const Hero = () => {
     const [colorIndex, setColorIndex] = useState(0);
@@ -49,10 +49,10 @@ const Hero = () => {
             </h2>
                 <button 
                 onClick={() => window.location.href = "#Projects"}
-                className='mt-6 px-10 py-4 bg-border hover-animate-laser transition-all duration-300
-                cursor-pointer rounded-full text-lg font-medium'>
+                className='mt-6 px-10 py-4 bg-border/50 hover-animate-laser transition-all duration-300
+                cursor-pointer rounded-full text-lg font-medium border border-border '>
                     <span>See my work</span>
-                    <BsArrowRight className='w-5 h-5 ml-2 inline-block' />
+                    <BsArrowRight className='w-5 h-5 ml-2 inline-block ' />
                 </button>
         </div>
     </div>
