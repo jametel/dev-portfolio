@@ -34,7 +34,7 @@ const Hero = () => {
             <h1 className='text-2xl sm:text-4xl md:text-5xl lg:text-6xl mt-6 text-center font-bold tracking-wide'>
                 The full stack.<br /> Frontend, backend, <br /> <span className='text-text-secondary'>and questionable commit messages.</span>
             </h1>
-            <h2 className='mt-5 text-sm px-2 text-center sm:text-2xl font:medium flex items-center bg-gradient-to-r from-laser-red/10 via-laser-cyan/10 to-laser-purple/10 backdrop-blur-sm rounded-lg py-2'>
+            <h2 className='mt-5 text-sm px-2 text-center sm:text-2xl font:medium flex items-center bg-gradient-to-br from-laser-red/10 via-laser-cyan/10 to-laser-purple/10 backdrop-blur-sm rounded-lg py-2'>
                 Hi! I'm James - A Passionate
                 <span className='pl-2' style={{ color: laserColors[colorIndex], transition: 'color 0.3s' }}>
                     <Typewriter words={[' Computer Science Student', ' Frontend Developer', ' Backend Developer', 'Web Developer']}
