@@ -35,7 +35,7 @@ const Projects = () => {
                 </div>
               ) : (
                 <div className='relative flex w-full h-100 items-center justify-center overflow-visible bg-elevated-surface rounded p-2 sm:p-8'>
-                  <GameController color='#f0f0f0' className='origin-center scale-150 sm:scale-100'/>
+                  <GameController color='#f0f0f0' className='origin-center scale-150'/>
                 </div>
               )}
               <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-text-primary px-4'>Portfolio Site</h1>

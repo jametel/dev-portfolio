@@ -18,7 +18,7 @@ const GameController = ({ color = '#f0f0f0', onClick, className }: GameControlle
         
             width='100%'
             height='100%'
-            viewBox="0 0 200 120"
+            viewBox="-20 10 220 110"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             onClick={onClick}
