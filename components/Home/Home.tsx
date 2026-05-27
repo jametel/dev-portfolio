@@ -25,17 +25,17 @@ const HomePage = () => {
       }
     };
 
-    // PRESS "L" TO START SHOW
-        const onKeyDown = (e: KeyboardEvent) => {
-            if (e.key.toLowerCase() === "l") {
-                window.dispatchEvent(new Event('lasershow'));
-            }
-        };
+    // // PRESS "L" TO START SHOW
+    //     const onKeyDown = (e: KeyboardEvent) => {
+    //         if (e.key.toLowerCase() === "l") {
+    //             window.dispatchEvent(new Event('lasershow'));
+    //         }
+    //     };
 
-        window.addEventListener('keydown', onKeyDown);
+    //     window.addEventListener('keydown', onKeyDown);
 
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey); window.removeEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKey);
   }, []);
    
   return (

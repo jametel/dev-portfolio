@@ -196,12 +196,12 @@ const LaserBackground = () => {
                 return "cross";
             }
 
-            if (elapsed < 6000) {
+            if (elapsed < 5500) {
                 return "vertical";
             }
 
             if (elapsed < 9000) {
-                return "cross";
+                return "horizontal";
             }
 
             return "scatter";
