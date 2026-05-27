@@ -88,7 +88,7 @@ const precompute = (
 
 type LaserMode = "scroll" | "show";
 
-const SHOW_DURATION = 12000;
+const SHOW_DURATION = 10000;
 
 const LaserBackground = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -104,6 +104,8 @@ const LaserBackground = () => {
     const modeRef = useRef<LaserMode>("scroll");
     const showStartRef = useRef<number | null>(null);
 
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    
     useEffect(() => {
         const canvas = canvasRef.current;
         const glowCanvas = glowCanvasRef.current;
@@ -153,6 +155,15 @@ const LaserBackground = () => {
         modeRef.current = "show";
         showStartRef.current = performance.now();
         document.getElementById('Hero')?.scrollIntoView({ behavior: 'smooth' });
+
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+        }
+        
+        audioRef.current = new Audio('/audio/bangarang.mp3');
+        audioRef.current.volume = 0.8;
+        audioRef.current.play();
 };
         window.addEventListener("lasershow", onLaserShow);
 
@@ -181,8 +192,8 @@ const LaserBackground = () => {
             // 6-9s = cross sweep
             // 9-12s = scatter chaos
 
-            if (elapsed < 3000) {
-                return "horizontal";
+            if (elapsed < 1100) {
+                return "cross";
             }
 
             if (elapsed < 6000) {
@@ -194,6 +205,20 @@ const LaserBackground = () => {
             }
 
             return "scatter";
+
+            // if (elapsed < 3000) {
+            //     return "horizontal";
+            // }
+
+            // if (elapsed < 6000) {
+            //     return "vertical";
+            // }
+
+            // if (elapsed < 9000) {
+            //     return "cross";
+            // }
+
+            // return "scatter";
         };
 
         const draw = () => {
