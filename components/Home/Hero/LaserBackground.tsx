@@ -193,18 +193,22 @@ const LaserBackground = () => {
             // 9-12s = scatter chaos
 
             if (elapsed < 1100) {
-                return "cross";
+                return "horizontal";
+            }
+
+            if (elapsed < 3500) {
+                return "scatter";
             }
 
             if (elapsed < 5500) {
                 return "vertical";
             }
 
-            if (elapsed < 9000) {
-                return "horizontal";
+            if (elapsed < 8000) {
+                return "scatter";
             }
 
-            return "scatter";
+            return "cross";
 
             // if (elapsed < 3000) {
             //     return "horizontal";
@@ -301,8 +305,8 @@ const LaserBackground = () => {
                             "horizontal"
                         ) {
                             angle +=
-                                Math.sin(t * 2) *
-                                0.5;
+                                Math.sin(t * 4) *
+                                0.8;
                         }
 
                         // UP / DOWN
@@ -319,12 +323,16 @@ const LaserBackground = () => {
                         if (
                             state === "cross"
                         ) {
+                            const crossElapsed = elapsed - 8000; // how far into the cross phase
+                            const crossProgress = crossElapsed / 2000; // 0 to 1 over 2000ms
+                            const eased = 1 - crossProgress; // 1 at start, 0 at end
+                            
                             angle +=
                                 Math.sin(
                                     t * 3 +
                                         rigIndex *
                                             Math.PI
-                                ) * 1.2;
+                                ) * 1.2 * eased;
                         }
 
                         // CHAOTIC SCATTER
