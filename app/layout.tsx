@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.className} h-full antialiased bg-page-bg`}>
+      <body className={`${spaceGrotesk.className} h-full antialiased`}>
         <ResponsiveNav />
         {children}
       </body>

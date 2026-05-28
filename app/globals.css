@@ -18,6 +18,14 @@
   --color-laser-green: #39ff14;
 }
 
+body {
+    background: 
+        radial-gradient(ellipse 60% 80% at 15% 60%, rgba(255, 170, 0, 0.12) 0%, transparent 100%),
+        radial-gradient(ellipse 60% 80% at 85% 40%, rgba(204, 0, 255, 0.11) 0%, transparent 100%),
+        #0a0a0a;
+    background-attachment: fixed;
+}
+
 @keyframes laserCycle {
   0%, 100% { background-color: var(--color-laser-red); }
   20% { background-color: var(--color-laser-cyan); }

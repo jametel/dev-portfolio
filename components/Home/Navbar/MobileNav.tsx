@@ -20,7 +20,7 @@ const MobileNav = ({ showNav, closeNav }: Props) => {
         w-full h-screen`} ></div>
         {/* Nav Links */ }
         <div className={`text-text-primary ${navOpen} ${pointerEvents} fixed justify-center flex flex-col h-full transform transition-all
-        duration-500 delay-200 w-[80%] sm:w-[60%] bg-elevated-surface space-y-6 z-[100050] right-0`}>
+        duration-500 delay-200 w-[80%] sm:w-[60%] bg-elevated-surface/70 backdrop-blur-sm [mask-image:linear-gradient(to_left,black_95%,transparent_100%)] shadow-md space-y-6 z-[100050] right-0`}>
             {NavLinks.map((link, index)=>{
                 const linkClass = textNavClasses[index % textNavClasses.length]
                 return <Link key={link.id} href={link.url}>
