@@ -293,6 +293,8 @@ const LaserBackground = () => {
                             elapsed >
                             SHOW_DURATION
                         ) {
+                            console.log("LASER SHOW ENDED");
+                            window.dispatchEvent(new Event('lasershow-ended'));
                             modeRef.current =
                                 "scroll";
                             showStartRef.current =
