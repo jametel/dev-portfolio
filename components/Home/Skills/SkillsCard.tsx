@@ -30,7 +30,7 @@ type Props = {
 
 const SkillsCard = ({ name, level, color, textColor, tier, icon, iconClasses }: Props) => {
   return (
-    <Tilt key={name} scale={1.5} transitionSpeed={400} className='hover:z-100'>
+    <Tilt key={name} scale={1.5} transitionSpeed={400} gyroscope={true} className='hover:z-100'>
                         <div className={`bg-card-bg/80 text-center w-60 h-50 rounded-3xl flex flex-col items-center 
                         justify-center shadow-lg transition hover:scale-105 border border-${color}/50 shadow-${color}/20
                         hover:bg-hover-state/50 hover:backdrop-blur-sm`}>
