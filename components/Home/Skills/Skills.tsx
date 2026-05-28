@@ -120,7 +120,8 @@ const hobbiesSkills = [
         color: 'laser-amber',
         textColor: 'text-laser-amber',
         tier: 'Legendary',
-        icon: <TbBrandMinecraft />
+        icon: <TbBrandMinecraft />,
+        link: 'https://namemc.com/profile/jmxs'
     },
     {
         name: 'Whistling',
