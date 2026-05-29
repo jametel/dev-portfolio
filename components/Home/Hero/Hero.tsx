@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { BsArrowRight } from 'react-icons/bs';
 import { Typewriter } from 'react-simple-typewriter'
 import LaserBackground from './LaserBackground';
+import { LuSprout } from 'react-icons/lu';
 
 const laserColors = ['#00ffcc', '#cc00ff', '#ff0055', '#ffaa00', '#39ff14'];
 // const hoverLasers = [
@@ -37,6 +38,18 @@ const Hero = () => {
     <div className='relative h-screen flex items-center justify-center text-text-primary overflow-hidden flex-col'>
         <LaserBackground />
         <div className='relative z-10 flex flex-col items-center'>
+            {showImage && (
+                <LuSprout 
+                    className='absolute text-laser-green'
+                    style={{
+                        fontSize: '7rem',
+                        top: '-5rem',
+                        zIndex: -1,
+                        filter: 'drop-shadow(0 0 12px #39ff14)',
+                        opacity: 0.9,
+                    }}
+                />
+            )}
             {showImage && (
                 <Image src='/images/profile-photo.jpg' alt='Profile Photo' width={150} height={150} className='rounded-full'
                 style={{

@@ -151,6 +151,11 @@ const LaserBackground = () => {
         //     }
         // };
 
+        const audio = new Audio('/audio/bangarang.mp3');
+        audio.preload = 'auto';
+        audio.load();
+        audioRef.current = audio;
+        
         const onLaserShow = () => {
         modeRef.current = "show";
         showStartRef.current = performance.now();
@@ -159,11 +164,8 @@ const LaserBackground = () => {
         if (audioRef.current) {
             audioRef.current.pause();
             audioRef.current.currentTime = 0;
+            audioRef.current.play();
         }
-        
-        audioRef.current = new Audio('/audio/bangarang.mp3');
-        audioRef.current.volume = 0.8;
-        audioRef.current.play();
 };
         window.addEventListener("lasershow", onLaserShow);
 

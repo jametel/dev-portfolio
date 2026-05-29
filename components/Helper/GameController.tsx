@@ -67,7 +67,7 @@ const GameController = ({ color = '#f0f0f0', onClick, className }: GameControlle
                 textAnchor="middle"
                 fontSize={9}
                 fontWeight="bold"
-                fill="#0a0a0a"
+                fill="#1a1a1a"
                 style={{ pointerEvents: 'none' }}
             >
                 A
@@ -83,7 +83,7 @@ const GameController = ({ color = '#f0f0f0', onClick, className }: GameControlle
                 textAnchor="middle"
                 fontSize={9}
                 fontWeight="bold"
-                fill= "#0a0a0a"
+                fill= "#1a1a1a"
                 style={{ pointerEvents: 'none' }}
             >
                 B
